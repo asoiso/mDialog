@@ -1,0 +1,143 @@
+/* mask */
+ .ui-mask {
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:#000;
+    z-index:9999;
+}
+/* ui-tips */
+ .ui-tips {
+    position: fixed;
+    top: 45%;
+    left: 10px;
+    right: 10px;
+    z-index: 10000;
+    text-align: center;
+}
+.ui-tips-i {
+    position: relative;
+    display: inline-block;
+    min-height: 48px;
+    line-height: 18px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #606060;
+    border:1px solid #ccc;
+    padding:0 10px 0 48px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 6px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 6px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FAFAFA), to(#E4E4E4));
+    border: 1px solid #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.ui-tips-text {
+    padding: 15px 0;
+    display: inline-block;
+}
+.ui-tips-icon {
+    position: absolute;
+    left:0;
+    top:50%;
+    width: 48px;
+    height:48px;
+    margin-top: -24px;
+    background: url(images/tips.png) no-repeat;
+}
+.ui-tips-succeed .ui-tips-icon {
+    background-position: 0 0;
+}
+.ui-tips-error .ui-tips-icon {
+    background-position: 0 -48px;
+}
+.ui-tips-info .ui-tips-icon {
+    background-position: 0 -96px;
+}
+.ui-tips-loading .ui-tips-i {
+    padding-left:32px;
+}
+.ui-tips-loading .ui-tips-icon {
+    width: 36px;
+    background: url(images/loading.gif) no-repeat center;
+}
+/* dialog */
+ .ui-dialog :focus {
+    outline: none;
+}
+.ui-dialog {
+    font: 14px/1.2em'Microsoft YaHei';
+    color: #888;
+    display:block;
+    position:fixed;
+    top:50%;
+    left:50%;
+    background-color:#fff;
+    z-index:10000;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);    
+    z-index: 10000;
+}
+.ui-dialog-header{
+    padding:0 10px;
+}
+.ui-dialog-title {
+    line-height:32px;
+    border-bottom:1px solid #ddd;
+}
+.ui-dialog-close {
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:14px;
+    height:14px;
+    background:url(images/ui-dialog-close.png) -36px 0 no-repeat;
+    cursor:pointer;
+}
+.ui-dialog-close:hover {
+    background-position:-18px 0;
+}
+.ui-dialog-content {
+    padding: 10px;
+    min-height: 28px;
+}
+.ui-dialog-footer {
+    padding:10px 0;
+    text-align: center;
+}
+.ui-dialog-input {
+    width: 94%;
+    height:20px;
+    padding:3px 5px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.ui-dialog-input:hover {
+    outline: none;
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.ui-dialog-button {
+    border:0;
+    padding: 5px 10px;
+    margin:0 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+}
+.ui-dialog-ok {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#3bb5ed), to(#3893d3));
+}
+.ui-dialog-cancel {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#aaa));
+}
+.ui-dialog-ok:hover {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#3893d3), to(#3bb5ed));
+}
+.ui-dialog-cancel:hover {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#aaa), to(#ccc));
+}

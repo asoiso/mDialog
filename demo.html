@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Demo</title>
+    <meta name="mobileOptimized" content="240" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="mDialog.css" />
+    <script type="text/javascript" src="http://asset.dongting.com/base/scripts/zepto/all.js"></script>
+    <script type="text/javascript" src="mDialog.js"></script>
+    <script>
+    function demoTip(i) {
+        var tip = "",
+            type = "";
+        switch (i) {
+            case 1:
+                tip = "服务器繁忙，请稍后再试。";
+                type = "info";
+                break;
+            case 4:
+                tip = "设置成功！";
+                type = "succeed";
+                break;
+            case 5:
+                tip = "数据拉取失败";
+                type = "error";
+                break;
+            case 6:
+                tip = "正在加载中，请稍后...";
+                type = "loading";
+                break;
+        }
+        $.mDialog.tips(tip, type);
+    }
+
+    function demoTipHide() {
+        $.mDialog.closeTips();
+    }
+
+    function demoAutoHide(i) {
+        var tip = "",
+            type = "";
+        switch (i) {
+            case 1:
+                tip = "服务器繁忙，请稍后再试。";
+                type = "info";
+                break;
+            case 4:
+                tip = "设置成功！";
+                type = "succeed";
+                break;
+            case 5:
+                tip = "数据拉取失败";
+                type = "error";
+                break;
+            case 6:
+                tip = "正在加载中，请稍后...";
+                type = "loading";
+                break;
+        }
+        $.mDialog.tips(tip, type, 3);
+    }
+
+    function customDialog() {
+        $.mDialog.dialog({
+            id: "myDialog",
+            title: "标题",
+            content: $("#tipsContainer").html(),
+            width: 500,
+            lock: true,
+            ok: function() {
+                alert('ok');
+            },
+            cancel: function() {
+                alert('cancel');
+            },
+            close: function() {
+                alert('close');
+            },
+            button: '<input type="button" value="图标1" onclick="demoTip(1)" /> <input type="button" value="图标2" onclick="demoTip(2)" /> <input type="button" value="图标3" onclick="demoTip(4)" />',
+            onInit: function(dialog) {
+                alert('onInit');
+            }
+        });
+    }
+    </script>
+</head>
+
+<body>
+    <div id="tipsContainer">
+        <p>4种不同提示图标</p>
+        <input type="button" value="图标1" onclick="demoTip(1)" />
+        <input type="button" value="图标4" onclick="demoTip(4)" />
+        <input type="button" value="图标5" onclick="demoTip(5)" />
+        <input type="button" value="图标6" onclick="demoTip(6)" />
+        <p>隐藏</p>
+        <input type="button" value="隐藏" onclick="demoTipHide()" />
+        <p>3秒后自动隐藏</p>
+        <input type="button" value="图标1" onclick="demoAutoHide(1)" />
+        <input type="button" value="图标4" onclick="demoAutoHide(4)" />
+        <input type="button" value="图标5" onclick="demoAutoHide(5)" />
+        <input type="button" value="图标6" onclick="demoAutoHide(6)" />
+    </div>
+    <p>系统对话框</p>
+    <input type="button" value="alert" onclick="$.mDialog.alert('提示内容',function(){alert('提示回调！');},'提示标题')" />
+    <input type="button" value="confirm" onclick="$.mDialog.confirm('确认内容',function(){alert('yes');},function(){alert('no');},'确认标题')" />
+    <input type="button" value="prompt" onclick="$.mDialog.prompt('提示标题','默认值',function(val){alert(val);})" />
+    <input type="button" value="dialog" onclick="customDialog();" />
+</body>
+
+</html>
