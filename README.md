@@ -17,3 +17,5 @@ $.mDialog.prompt(title, defaultVal, fn)
 $.mDialog.tips(msg, type, time) 
 $.mDialog.closeTips()
 ```
+
+## Test
